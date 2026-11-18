@@ -1,0 +1,32 @@
+section {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  > .main {
+    flex-grow: 1;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 90vw;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-left: var(--container-padding-left);
+  padding-right: var(--container-padding-right);
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--primary-color);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+  }
+}

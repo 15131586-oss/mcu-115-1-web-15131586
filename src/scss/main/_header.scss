@@ -1,0 +1,94 @@
+@use "../common";
+
+header {
+  border-bottom: solid 1px var(--border-color);
+  background-color: var(--background-color);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  .header-inner {
+    min-height: 4rem;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding-block: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .site-title {
+      margin: 0px;
+      @include common.fontStyle(1.25rem, 700, 1.75rem);
+      color: var(--primary-color);
+    }
+
+    .header-brand,
+    .header-actions {
+      display: flex;
+      align-items: center;
+
+      &.header-brand {
+        min-width: 0;
+        flex-wrap: wrap;
+        gap: 0.5rem 2rem;
+      }
+
+      &.header-actions {
+        gap: 0.5rem;
+      }
+    }
+
+    nav {
+      display: var(--nav-display);
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    label[for="book-search"] {
+      display: var(--search-bar-display);
+    }
+
+    div.search {
+      display: var(--search-bar-display);
+      align-items: stretch;
+      gap: 0;
+
+      input {
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        width: 200px;
+        padding: 1rem 0.5rem 1rem 1rem;
+        border: none;
+        background-color: var(--gray-color-100);
+      }
+
+      button {
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        @include common.buttonStyle;
+        background-color: var(--gray-color-100);
+      }
+    }
+
+    .search input:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 3px;
+    }
+
+    button {
+      background-color: transparent;
+      @include common.buttonStyle;
+      color: var(--text-color);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .material-symbols-outlined {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+}
